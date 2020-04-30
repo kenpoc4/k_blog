@@ -14,3 +14,17 @@ if ( function_exists( 'add_theme_support' ) ) {
     add_theme_support( 'post-thumbnails' );
 
  }
+
+ //Agragando sidebar
+ function k_widgets(){
+    register_sidebar( array(
+        'id'    =>  'k-widgets',
+        'name'          => __( 'Widget derecha' ),
+        'description'   => __( 'Arrastrar lo que sea' ),
+        'before_widget' => '<div class="card-body">',
+        'after_widget'  => '</div>',
+        'before_title'  => '<h4>',
+        'after_title'   => '</h4><hr>',
+    ));
+ }
+ add_action( 'widgets_init', 'k_widgets');
