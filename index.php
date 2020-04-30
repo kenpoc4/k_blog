@@ -20,7 +20,14 @@
                                         <p class="small mb-0">Autor: <?php the_author();?></p>
                                         <p class="small">Categoría: <?php the_category( '/') ?> Etiquetas: <?php the_tags('', '/', '');?></p>
 
-                                        <img src="img/horizontal.jpg" alt="" class="img-fluid mb-3">
+                                        <?php
+                                            if ( has_post_thumbnail() ) {
+                                                the_post_thumbnail('post-thumbnails', array(
+                                                    'class' =>  'img-fluid mb-3'
+                                                ));
+                                            }
+                                        ?>
+                                        <!-- <img src="img/horizontal.jpg" alt="" class="img-fluid mb-3"> -->
                                         <?php the_excerpt(); ?>
 
                                         <a href="<?php the_permalink();?>" class="btn btn-primary pl-4 pr-4">Ver</a>

@@ -8,3 +8,9 @@ function agregar_css_js(){
     wp_enqueue_script('bootstrap-js', 'https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js', array ('popper'), '4.4.1', true);
 }
 add_action('wp_enqueue_scripts', 'agregar_css_js');
+
+// Imagenes destacadas
+if ( function_exists( 'add_theme_support' ) ) {
+    add_theme_support( 'post-thumbnails' );
+
+ }
