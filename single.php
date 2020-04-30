@@ -1,6 +1,6 @@
 <?php get_header();?>
 
-<!-- Body -->
+<!-- Single -->
     <div class="container">
         <h2 class="my-5 text-center text-primary">Titulo Blog</h2>
         <hr>
@@ -13,38 +13,18 @@
                             while ( have_posts() ) : the_post();    ?> 
                                 <!-- Entrada -->
                                     <div class="card-body">
-                                        <a href="<?php the_permalink();?>">
-                                            <h2><?php the_title(); ?></h2>
-                                        </a>
+                                        <h2><?php the_title(); ?></h2>
                                         <p class="small mb-0">Fecha: <?php the_time('F j, Y'); ?></p>
                                         <p class="small mb-0">Autor: <?php the_author();?></p>
                                         <p class="small">Categoría: <?php the_category( '/') ?> Etiquetas: <?php the_tags('', '/', '');?></p>
 
                                         <img src="img/horizontal.jpg" alt="" class="img-fluid mb-3">
-                                        <?php the_excerpt(); ?>
-
-                                        <a href="<?php the_permalink();?>" class="btn btn-primary pl-4 pr-4">Ver</a>
+                                        <?php the_content(); ?>
                                     </div>
                                 <!-- Fin entrada -->
                             <?php   endwhile; 
                         endif; 
                     ?>
-                    
-
-                    <!-- Paginación -->
-                        <div class="card-body">
-                            <nav aria-label="Page navigation example">
-                                <ul class="pagination">
-                                    <li class="page-item"><a class="page-link" href="#">Anterior</a></li>
-                                    <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                                    <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                    <li class="page-item"><a class="page-link" href="#">Siguiente</a></li>
-                                </ul>
-                                </nav>
-                        </div>
-                    <!-- Fin paginación -->
-
                 </div>
             <!-- Fin columna principal -->
 
@@ -60,6 +40,6 @@
 
         </div>
     </div>
-<!-- Fin body -->
+<!-- Fin single -->
 
 <?php get_footer();?>
