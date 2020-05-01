@@ -36,13 +36,7 @@
             <!-- Fin columna principal -->
 
             <!-- Barra lateral -->
-                <div class="col-lg-3">
-                    <div class="card-body">
-                        <h4>Barra lateral</h4>
-                        <hr>
-                        <img src="img/vertical.jpg" alt="" class="img-fluid">
-                    </div>
-                </div>
+            <?php get_sidebar();?>
             <!-- Fin Barra lateral -->
 
         </div>
