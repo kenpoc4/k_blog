@@ -18,14 +18,27 @@
                 <span class="navbar-toggler-icon"></span>
                 </button>
             
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <!-- <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <div class="navbar-nav ml-auto">
                         <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
                         <a class="nav-item nav-link" href="#">Blog</a>
                         <a class="nav-item nav-link" href="#">Contacto</a>
                     </div>
-                </div>
+                </div> -->
                 
+                <?php
+                    wp_nav_menu( array(
+                        'theme_location'    => 'menu-principal',
+                        'depth'             => 2,
+                        'container'         => 'div',
+                        'container_class'   => 'collapse navbar-collapse',
+                        'container_id'      => 'navbarSupportedContent',
+                        'menu_class'        => 'nav navbar-nav ml-auto',
+                        'fallback_cb'       => 'WP_Bootstrap_Navwalker::fallback',
+                        'walker'            => new WP_Bootstrap_Navwalker(),
+                    ) );
+                ?>
+
             </div>
         </nav>
     <!-- Fin Navbar -->
