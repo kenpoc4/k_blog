@@ -8,7 +8,6 @@
             <!-- Columna principal -->
                 <div class="col-lg-9">
                     <?php 
-                        get_header();
                         if ( have_posts() ) : 
                             while ( have_posts() ) : the_post();    ?> 
                                 <!-- Entrada -->
@@ -27,6 +26,12 @@
                                         ?>
                                         <!-- <img src="img/horizontal.jpg" alt="" class="img-fluid mb-3"> -->
                                         <?php the_content(); ?>
+
+                                        <?php
+                                            if ( comments_open() || get_comments_number() ) :
+                                                comments_template();
+                                            endif;
+                                        ?>
                                     </div>
                                 <!-- Fin entrada -->
                             <?php   endwhile; 
